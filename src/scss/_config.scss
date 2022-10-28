@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap');
+
+$primaryColor: #ffffff;
+$secondaryColor: #000000;
+$accentColor: #b4ff00;
+$buttonColor: #4b00ff;
+$buttonShadow: #00000066;
+$textMain: #fff;
+$textSecondary: #858585;
+$fontWeights: (
+  'regular': 400,
+  'medium': 500,
+  'bold': 7000,
+);
+
+/*
+ * Transitions
+*/
+
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+
+/*
+ * Media Queries
+*/
+
+@mixin media-md {
+  @media screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}
