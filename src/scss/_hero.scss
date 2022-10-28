@@ -1,0 +1,50 @@
+.hero {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(180deg, #fefefe00 40%, #000000 100%) 0% 0%
+    no-repeat padding-box;
+  mix-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+
+  &-image {
+    background-size: cover;
+    background-position: left 50% top 0%;
+    background-image: url('../assets/Hero_Banner.png');
+    mix-blend-mode: multiply;
+    width: 100vw;
+    height: 130vh;
+  }
+  &-modal {
+    top: 45%;
+    left: 12%;
+    max-width: 30%;
+    position: absolute;
+    color: $primaryColor;
+    text-align: left;
+    font-weight: 800;
+
+    &-title {
+      font-size: 6rem;
+      letter-spacing: 0px;
+      color: #ffffff;
+      position: relative;
+      min-height: 120px;
+    }
+
+    &-title::before {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      height: 20px;
+      width: 15%;
+      background-color: $accentColor;
+    }
+
+    &-content {
+      margin-top: 4rem;
+      font-size: 2rem;
+    }
+  }
+}

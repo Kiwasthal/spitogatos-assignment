@@ -1,0 +1,16 @@
+@import 'config', 'home', 'menu', 'hero';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primaryColor;
+  color: $textMain;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
