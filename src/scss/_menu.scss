@@ -1,0 +1,54 @@
+.nav {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 64px;
+  background: $secondaryColor;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &-logo {
+    position: absolute;
+    left: 72px;
+    top: 26px;
+    height: 72px;
+    width: 72px;
+    cursor: pointer;
+  }
+
+  .menu-nav {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+
+    &-link {
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0px;
+      position: relative;
+      cursor: pointer;
+
+      &.active {
+        color: $accentColor;
+      }
+
+      &.active::after {
+        content: '';
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -90%;
+        background: $accentColor;
+        width: 120%;
+        height: 10px;
+        position: absolute;
+      }
+    }
+  }
+}
