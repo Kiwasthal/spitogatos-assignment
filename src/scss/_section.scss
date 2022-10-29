@@ -1,0 +1,109 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 144px;
+  padding-top: 15vh;
+  padding-bottom: 20vh;
+
+  &-item {
+    height: 50%;
+    width: 76%;
+    display: flex;
+    gap: 100px;
+
+    /**
+    * Image
+    **/
+
+    .image-container {
+      min-height: 368px;
+      min-width: 696px;
+      background-size: cover;
+      background-position: center;
+
+      @include transition-ease;
+
+      &.one {
+        background-image: url('../assets/Content_Image_One.jpg');
+      }
+
+      &.one:hover {
+        background-position: bottom;
+      }
+
+      &.two {
+        height: 424px;
+        width: 455px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('../assets/Content_Image_Two.png');
+        transition: all 0.2s ease-in-out;
+        transition-delay: 0.1s;
+      }
+
+      &.two:hover {
+        transform: rotate(180deg);
+      }
+    }
+
+    /**
+    * Text 
+    **/
+
+    .information-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 455px;
+
+      //Displacing only the second container to fit layout
+      &.secondary {
+        //Calculation based on image default size (convert to grids)
+        width: 696px;
+        margin-left: 239px;
+      }
+
+      h4 {
+        color: $textIdle;
+        height: 15px;
+        font-size: 19px;
+        letter-spacing: 0px;
+        margin-bottom: 9px;
+      }
+
+      h3 {
+        color: $secondaryColor;
+        font-size: 32px;
+        margin-bottom: 32px;
+      }
+
+      p {
+        line-height: 1.7rem;
+        font-size: 18px;
+        text-align: left;
+        color: $secondaryColor;
+      }
+
+      button {
+        margin-top: 40px;
+        height: 56px;
+        width: 240px;
+        outline: none;
+        border: none;
+        border-radius: 42px;
+        box-shadow: 0px 3px 6px #00000066;
+        background: $buttonColor;
+        font-size: 22px;
+        font-weight: 800;
+        color: $primaryColor;
+        text-align: center;
+      }
+
+      button:hover {
+        background: $buttonColorHovered;
+      }
+    }
+  }
+}
