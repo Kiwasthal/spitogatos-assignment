@@ -19,13 +19,13 @@
     cursor: pointer;
   }
 
-  .menu-nav {
+  &-menu {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
     list-style: none;
-    gap: 2rem;
+    gap: 3rem;
 
     &-link {
       display: inline-block;
@@ -49,6 +49,22 @@
         height: 10px;
         position: absolute;
       }
+    }
+  }
+
+  &-localization {
+    position: absolute;
+    right: 72px;
+    top: 26px;
+    color: $textSecondary;
+    cursor: default;
+
+    span {
+      cursor: pointer;
+    }
+
+    span:first-child {
+      color: $primaryColor;
     }
   }
 }

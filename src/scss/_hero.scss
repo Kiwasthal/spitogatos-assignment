@@ -8,22 +8,30 @@
   background-size: cover;
   overflow: hidden;
 
-  &-image {
+  /*
+  * --------- Hero Text Layout ---------
+  */
+
+  .hero-image {
     background-size: cover;
     background-position: left 50% top 0%;
-    background-image: url('../assets/Hero_Banner.png');
     mix-blend-mode: multiply;
     width: 100vw;
     height: 130vh;
   }
+
+  /*
+  * --------- Hero Text Layout ---------
+  */
+
   &-modal {
     top: 45%;
+    //Relative size -- Used later to configure section
     left: 12%;
-    max-width: 30%;
+    max-width: 32%;
     position: absolute;
     color: $primaryColor;
     text-align: left;
-    font-weight: 800;
 
     &-title {
       font-size: 6rem;
@@ -31,20 +39,49 @@
       color: #ffffff;
       position: relative;
       min-height: 120px;
+      font-weight: 800;
     }
 
     &-title::before {
       content: '';
       position: absolute;
       bottom: -10%;
-      height: 20px;
-      width: 15%;
+      height: 15px;
+      width: 96px;
       background-color: $accentColor;
     }
 
     &-content {
       margin-top: 4rem;
       font-size: 2rem;
+      font-weight: 800;
+    }
+  }
+
+  /*
+  * --------- SideNav (+BUTTONS) ---------
+  */
+
+  &-slidenav {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+
+    &-item {
+      height: 16px;
+      width: 16px;
+      background-color: $buttonIdle;
+      border-radius: 100%;
+      cursor: pointer;
+
+      @include transition-ease;
+
+      &.active {
+        background-color: $primaryColor;
+      }
     }
   }
 }
