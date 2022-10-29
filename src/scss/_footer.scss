@@ -1,0 +1,22 @@
+.footer {
+  background: $secondaryColor;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-left: 72px;
+  padding-right: 72px;
+
+  &-copywrite {
+    font-size: 19px;
+  }
+
+  &-cookiesprivacy {
+    font-size: 22px;
+    font-weight: 800;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
