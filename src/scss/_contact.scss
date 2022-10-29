@@ -71,7 +71,26 @@
       align-items: flex-end;
       position: relative;
 
-      &-input {
+      /*
+      * --------- Select Input Config ---------
+      */
+
+      &.options {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+
+        .options-wrapper {
+          position: relative;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+        }
+      }
+
+      &-input,
+      &-textarea {
         outline: none;
         border: 1px solid $secondaryColor;
         margin-bottom: 8px;
@@ -86,7 +105,8 @@
         @include transition-ease;
       }
 
-      &-input:hover {
+      &-input:hover,
+      &-textarea:hover {
         border: 1px solid $buttonColor;
       }
 
@@ -113,7 +133,9 @@
       }
 
       &-input:focus + .form-label,
-      &-input:valid + .form-label {
+      &-textarea:focus + .form-label,
+      &-input:valid + .form-label,
+      &-textarea:valid + .form-label {
         transform: translateY(-20px) translateX(35px);
         font-size: 12px;
         background-color: $formColor;
@@ -123,12 +145,22 @@
         color: $buttonColor;
       }
 
-      .form-input:not(:focus).form-input:valid + .form-label {
+      .form-input:not(:focus).form-input:valid + .form-label,
+      .form-textarea:not(:focus).form-textarea:valid + .form-label {
         color: $secondaryColor;
       }
 
-      &-input:focus:required:invalid + .form-label {
+      &-input:focus:required:invalid + .form-label,
+      &-textarea:focus:required:invalid + .form-label {
         color: $formInvalid;
+      }
+
+      &-textarea {
+        outline: none;
+        width: 100%;
+        height: 136px;
+        resize: none;
+        padding-top: 19px;
       }
 
       &-error {
@@ -150,6 +182,12 @@
         width: 30px;
         height: 30px;
       }
+    }
+    .radiotext {
+      height: 19px;
+      opacity: 0.8;
+      font-size: 16px;
+      font-weight: 400;
     }
   }
 }

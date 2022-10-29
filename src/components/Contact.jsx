@@ -1,13 +1,28 @@
 import Map from '../assets/Contact_Map.png';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import * as YUP from 'yup';
+import FormMessage from './Form_partials/FormMessage';
+import FormFullName from './Form_partials/FormName';
+import FormEmail from './Form_partials/FormEmail';
+import FormPhone from './Form_partials/FormPhone';
+import FormCategories from './Form_partials/FormCategories';
+
+/*
+--- Initialize form values ---
+*/
 
 const initialValues = {
   fullname: '',
   email: '',
   phone: '',
   message: '',
+  category: '',
+  subcategory: '',
 };
+
+/*
+--- Yup Config ---
+*/
 
 const validationSchema = YUP.object({
   fullname: YUP.string().required('Full Name is required'),
@@ -37,117 +52,36 @@ const ContactSection = () => {
         >
           {() => (
             <Form>
+              {/* --- Full Name--- */}
               <div className="form">
-                <Field className="wrapper" name="fullname">
-                  {({ field, meta }) => (
-                    <>
-                      <input
-                        type="text"
-                        name="fullname"
-                        className="form-input"
-                        required={true}
-                        {...field}
-                      />
-                      <span className="form-label">Full Name *</span>
-                      {!meta.error && meta.touched ? (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="#4B00FF"
-                          className="form-checkmark"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M4.5 12.75l6 6 9-13.5"
-                          />
-                        </svg>
-                      ) : null}
-                      {meta.error ? (
-                        <span className="form-error">{meta.error}</span>
-                      ) : (
-                        <span className="form-error">&nbsp;</span>
-                      )}
-                    </>
-                  )}
-                </Field>
+                <FormFullName />
               </div>
+
+              {/* --- Email --- */}
               <div className="form">
-                <Field name="email">
-                  {({ field, meta }) => (
-                    <>
-                      <input
-                        type="text"
-                        name="email"
-                        className="form-input"
-                        required={true}
-                        {...field}
-                      />
-                      <span className="form-label">Email *</span>
-                      {meta.error ? (
-                        <span className="form-error">{meta.error}</span>
-                      ) : (
-                        <span className="form-error">&nbsp;</span>
-                      )}
-                      {!meta.error && meta.touched ? (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="#4B00FF"
-                          className="form-checkmark"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M4.5 12.75l6 6 9-13.5"
-                          />
-                        </svg>
-                      ) : null}
-                    </>
-                  )}
-                </Field>
+                <FormEmail />
               </div>
+
+              {/* --- Phone --- */}
+
               <div className="form">
-                <Field name="phone">
-                  {({ field, meta }) => (
-                    <>
-                      <input
-                        type="text"
-                        name="phone"
-                        className="form-input"
-                        required={true}
-                        {...field}
-                      />
-                      <span className="form-label">Phone *</span>
-                      {!meta.error && meta.touched ? (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="#4B00FF"
-                          className="form-checkmark"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M4.5 12.75l6 6 9-13.5"
-                          />
-                        </svg>
-                      ) : null}
-                      {meta.error ? (
-                        <span className="form-error">{meta.error}</span>
-                      ) : (
-                        <span className="form-error">&nbsp;</span>
-                      )}
-                    </>
-                  )}
-                </Field>
+                <FormPhone />
               </div>
+
+              {/* --- Categories / Select --- */}
+
+              <div className="form options">
+                <FormCategories />
+              </div>
+
+              {/* --- Message --- */}
+              <div className="form">
+                <FormMessage />
+              </div>
+
+              <p className="radiotext">
+                Please select at least one of the following:
+              </p>
             </Form>
           )}
         </Formik>
