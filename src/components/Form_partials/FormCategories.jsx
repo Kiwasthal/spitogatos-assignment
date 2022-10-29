@@ -1,6 +1,19 @@
 import { Field } from 'formik';
+import CheckMark from '../../assets/Chekmark';
+import useFetch from '../../hooks/useFetch';
 
 const FormCategories = () => {
+  const { data, loading, error } = useFetch(
+    'https://run.mocky.io/v3/0b8fbded-6ce4-4cb2-bf2f-d2c39207506b'
+  );
+
+  /**
+   * Proper error handling & loading skeletons can be managed here
+   */
+
+  if (error) return;
+  if (loading) return;
+
   return (
     <>
       <Field name="category">
@@ -14,25 +27,12 @@ const FormCategories = () => {
                 required={true}
                 {...field}
               >
-                <option value="">one</option>
+                {data.map((option, index) => (
+                  <option key={index}>{option.name}</option>
+                ))}
               </select>
               <span className="form-label">Category</span>
-              {!meta.error && meta.touched ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="#4B00FF"
-                  className="form-checkmark"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.5 12.75l6 6 9-13.5"
-                  />
-                </svg>
-              ) : null}
+              <CheckMark error={meta.error} touched={meta.touched} />
               {meta.error ? (
                 <span className="form-error">{meta.error}</span>
               ) : (
@@ -54,22 +54,6 @@ const FormCategories = () => {
                 {...field}
               />
               <span className="form-label">Category</span>
-              {!meta.error && meta.touched ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="#4B00FF"
-                  className="form-checkmark"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.5 12.75l6 6 9-13.5"
-                  />
-                </svg>
-              ) : null}
               {meta.error ? (
                 <span className="form-error">{meta.error}</span>
               ) : (
