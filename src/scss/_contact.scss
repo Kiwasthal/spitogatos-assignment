@@ -1,0 +1,155 @@
+.contact {
+  width: 100%;
+  display: flex;
+  position: relative;
+
+  /*
+  * --------- Map & Map Pointer ---------
+  */
+
+  &-map {
+    height: 1032px;
+    width: 857px;
+    object-fit: cover;
+    object-position: right;
+  }
+
+  &-badge {
+    position: absolute;
+    left: 412px;
+    top: 512px;
+    width: 32px;
+    height: 32px;
+    background-color: $accentColor;
+    z-index: 9999;
+    border-radius: 100px;
+    transform: scale(1);
+
+    @include transition-ease;
+  }
+
+  &-badge:hover {
+    width: 32px;
+    height: 32px;
+    transform: scale(10);
+  }
+
+  /*
+  * --------- Form Container ---------
+  */
+
+  &-formwrapper {
+    background: $formColor;
+    width: 100%;
+    display: flex;
+    padding-top: 104px;
+    padding-left: 240px;
+    padding-right: 240px;
+    flex-direction: column;
+    color: $secondaryColor;
+
+    h2 {
+      font-weight: 800;
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 48px;
+    }
+
+    /*
+    * --------- Form Fields ---------
+    */
+
+    .form {
+      display: -webkit-box;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      position: relative;
+
+      &-input {
+        outline: none;
+        border: 1px solid $secondaryColor;
+        margin-bottom: 8px;
+        width: 100%;
+        height: 56px;
+        border-radius: 28px;
+        padding-left: 40px;
+        font-size: 22px;
+        font-weight: 500;
+        opacity: 0.8;
+
+        @include transition-ease;
+      }
+
+      &-input:hover {
+        border: 1px solid $buttonColor;
+      }
+
+      &-input:focus {
+        border: 2px solid $buttonColor;
+      }
+
+      &-input:focus:required:invalid {
+        border: 1px solid $formInvalid;
+      }
+
+      &-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-left: 40px;
+        padding-top: 15px;
+        color: $secondaryColor;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1;
+        transition: all 300ms ease-in;
+        pointer-events: none;
+      }
+
+      &-input:focus + .form-label,
+      &-input:valid + .form-label {
+        transform: translateY(-20px) translateX(35px);
+        font-size: 12px;
+        background-color: $formColor;
+        top: 0;
+        padding-left: 10px;
+        padding-right: 15px;
+        color: $buttonColor;
+      }
+
+      .form-input:not(:focus).form-input:valid + .form-label {
+        color: $secondaryColor;
+      }
+
+      &-input:focus:required:invalid + .form-label {
+        color: $formInvalid;
+      }
+
+      &-error {
+        color: $textSecondary;
+        font-size: 14px;
+        margin-right: 20px;
+        white-space: pre;
+        margin-bottom: 16px;
+        display: block;
+        height: 16px;
+      }
+
+      &-checkmark {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 13px;
+        margin-right: 15px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
