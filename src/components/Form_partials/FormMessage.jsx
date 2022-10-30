@@ -8,13 +8,16 @@ const FormMessage = ({ control }) => {
   return (
     <>
       <Field
+        aria-label="Your message"
         as="textarea"
         name="message"
         type="text"
         className="form-textarea"
         maxlength="100"
       />
-      <span className="form-label">Message *</span>
+      <span aria-hidden="true" className="form-label">
+        Message *
+      </span>
       {/* Getting the available characters (all chars - typed chars) */}
       <p className="form-error">{100 - control.length}</p>
     </>

@@ -7,13 +7,16 @@ const FormEmail = () => {
       {({ field, meta }) => (
         <>
           <input
+            aria-label="Your phone"
             type="text"
             name="email"
             className="form-input"
             required={true}
             {...field}
           />
-          <span className="form-label">Email *</span>
+          <span aria-hidden="true" className="form-label">
+            Email *
+          </span>
           {meta.error ? (
             <span className="form-error">{meta.error}</span>
           ) : (

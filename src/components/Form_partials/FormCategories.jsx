@@ -22,7 +22,12 @@ const FormCategories = ({ control }) => {
   return (
     <>
       <div className="form-options">
-        <Field as="select" name="category" className="form-input">
+        <Field
+          aria-label="category"
+          as="select"
+          name="category"
+          className="form-input"
+        >
           {data.map((option, index) => (
             <option key={index} value={option.name}>
               {option.name}
@@ -32,7 +37,12 @@ const FormCategories = ({ control }) => {
         <SelectArrow />
       </div>
       <div>
-        <Field name="subcategory" as="select" className="form-input">
+        <Field
+          aria-label="subcategory"
+          name="subcategory"
+          as="select"
+          className="form-input"
+        >
           {/* // Gets the necessary subcategory data based on the selected value */}
           {data.map(category => {
             //If the selected value is all we want to return all the relevant subcategories

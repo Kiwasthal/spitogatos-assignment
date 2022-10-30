@@ -99,7 +99,7 @@ const ContactSection = () => {
           validateOnChange={false}
         >
           {props => (
-            <Form>
+            <Form aria-label="Contact information">
               {/* --- Full Name--- */}
 
               <div className="form">
@@ -140,7 +140,9 @@ const ContactSection = () => {
               {/* --- Submit Button --- */}
 
               <div className="form-btnwrapper">
-                <button type="submit">Submit</button>
+                <button aria-label="submit" type="submit">
+                  Submit
+                </button>
               </div>
             </Form>
           )}

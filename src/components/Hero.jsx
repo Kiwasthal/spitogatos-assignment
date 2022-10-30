@@ -46,6 +46,7 @@ const Hero = () => {
                 : 'hero-slidenav-item '
             } `}
             onClick={() => setCurrentIndex(index)}
+            role="slider"
           ></div>
         ))}
       </div>

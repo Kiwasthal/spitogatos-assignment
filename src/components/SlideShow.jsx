@@ -28,6 +28,7 @@ const SlideShow = ({ slides, currentIndex }) => {
       variants={fadeVariants}
       initial="fadeIn"
       animate={controls}
+      role="listbox"
     ></motion.div>
   );
 };

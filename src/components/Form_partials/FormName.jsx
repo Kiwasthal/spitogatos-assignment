@@ -7,13 +7,16 @@ const FormFullName = () => {
       {({ field, meta }) => (
         <>
           <input
+            aria-label="Your full name"
             type="text"
             name="fullname"
             className="form-input"
             required={true}
             {...field}
           />
-          <span className="form-label">Full Name *</span>
+          <span aria-hidden="true" className="form-label">
+            Full Name *
+          </span>
           <CheckMark error={meta.error} touched={meta.touched} />
           {meta.error ? (
             <span className="form-error">{meta.error}</span>

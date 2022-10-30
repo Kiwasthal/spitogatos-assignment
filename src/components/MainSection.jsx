@@ -2,7 +2,11 @@ const MainSection = () => {
   return (
     <section className="main">
       <div className="main-item">
-        <div className="image-container one" />
+        <div
+          className="image-container one"
+          role="img"
+          aria-label="pop-art style woman using a camera"
+        />
         <div className="information-container">
           <h4>Since the 1500s</h4>
           <h3>The standard</h3>
@@ -27,7 +31,11 @@ const MainSection = () => {
           </p>
           <button>Search</button>
         </div>
-        <div className="image-container two" />
+        <div
+          className="image-container two"
+          role="img"
+          aria-label="black pillow with pointy edges"
+        />
       </div>
     </section>
   );

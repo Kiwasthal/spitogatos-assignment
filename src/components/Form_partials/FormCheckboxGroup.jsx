@@ -9,6 +9,7 @@ const CheckBox = ({ labeltext }) => {
         type="checkbox"
         value={labeltext}
         name="checkboxOption"
+        aria-checked="false"
       />
       <span className="checkmark"></span>
     </label>
