@@ -12,6 +12,7 @@ const FormEmail = () => {
             name="email"
             className="form-input"
             required={true}
+            spellCheck="false"
             {...field}
           />
           <span aria-hidden="true" className="form-label">

@@ -1,0 +1,78 @@
+@include media-lg {
+  .nav {
+    height: 64px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: visible;
+
+    h1 {
+      display: none !important;
+    }
+
+    .burger {
+      display: none;
+      position: absolute;
+    }
+
+    &-logo {
+      opacity: 1 !important;
+      position: absolute;
+      left: 72px;
+      top: 26px;
+      height: 72px;
+      width: 72px;
+      cursor: pointer;
+    }
+
+    &-menu {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      gap: 3rem;
+
+      &-link {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0px;
+        position: relative;
+        cursor: pointer;
+
+        &.active {
+          color: $accentColor;
+        }
+
+        &.active::after {
+          content: '';
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -90%;
+          background: $accentColor;
+          width: 120%;
+          height: 10px;
+          position: absolute;
+        }
+      }
+    }
+
+    &-localization {
+      display: block;
+      position: absolute;
+      right: 72px;
+      top: 26px;
+      color: $textSecondary;
+      cursor: default;
+
+      span {
+        cursor: pointer;
+      }
+
+      span:first-child {
+        color: $primaryColor;
+      }
+    }
+  }
+}

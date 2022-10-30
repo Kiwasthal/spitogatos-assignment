@@ -27,23 +27,35 @@ $fontWeights: (
 }
 
 /*
- * Media Queries
+ * Media Queries 
 */
 
+@mixin media-sm {
+  @media screen and (min-width: 640px) {
+    @content;
+  }
+}
+
 @mixin media-md {
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 768px) {
     @content;
   }
 }
 
 @mixin media-lg {
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1075px) {
     @content;
   }
 }
 
 @mixin media-xl {
-  @media screen and (min-width: 1600px) {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin media-2xl {
+  @media screen and (min-width: 1536px) {
     @content;
   }
 }

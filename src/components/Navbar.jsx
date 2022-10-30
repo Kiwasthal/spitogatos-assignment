@@ -1,13 +1,20 @@
 import Logo from '../assets/Logo.svg';
+import BurgerMenu from '../assets/BurgerMenu';
+import { useState } from 'react';
 
 /**
  * NavBar
  */
 
 const Nav = () => {
+  const [burgerClass, setBurgerClass] = useState('closed');
+
+  const handleBurgerClick = () =>
+    burgerClass === 'open' ? setBurgerClass('closed') : setBurgerClass('open');
+
   return (
     <header>
-      <nav className="nav" role="navigation" aria-label="Main">
+      <nav className={`nav ${burgerClass}`} role="navigation" aria-label="Main">
         <img src={Logo} alt="S.und Co Lime Logo" className="nav-logo" />
         <ul className="nav-menu" aria-label="menubar">
           <li className="nav-menu-link active" aria-label="menuitem">
@@ -29,6 +36,8 @@ const Nav = () => {
             Contact
           </li>
         </ul>
+        <h1>Menu</h1>
+        <BurgerMenu click={handleBurgerClick} />
         <h3 className="nav-localization">
           <span>EN</span> | <span>GR</span>
         </h3>

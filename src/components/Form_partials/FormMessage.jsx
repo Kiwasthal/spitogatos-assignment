@@ -1,5 +1,4 @@
 import { Field } from 'formik';
-import { useState } from 'react';
 import CheckMark from '../../assets/Chekmark';
 
 //Control props gives us access to the value inputted in the textarea field
@@ -14,6 +13,7 @@ const FormMessage = ({ control }) => {
         type="text"
         className="form-textarea"
         maxLength="100"
+        spellCheck="false"
       />
       <span aria-hidden="true" className="form-label">
         Message *
