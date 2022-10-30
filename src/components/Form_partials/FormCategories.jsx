@@ -1,12 +1,10 @@
 import { Field } from 'formik';
-import { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
 
 //Control props provides the selected value of the category field
 
 const FormCategories = ({ control }) => {
   //By default we set the selected value to display all subcategories
-  const [selected, setSelected] = useState('All');
 
   //Basic hook handling fetching states
   const { data, loading, error } = useFetch(
