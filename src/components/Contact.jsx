@@ -1,6 +1,13 @@
 import Map from '../assets/Contact_Map.png';
 import { Formik, Form } from 'formik';
 import * as YUP from 'yup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faInstagram,
+  faTwitter,
+  faFacebookF,
+} from '@fortawesome/free-brands-svg-icons';
+import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 import FormMessage from './Form_partials/FormMessage';
 import FormFullName from './Form_partials/FormName';
 import FormEmail from './Form_partials/FormEmail';
@@ -66,7 +73,18 @@ const ContactSection = () => {
     <section className="contact">
       {/* --- Map --- */}
       <img className="contact-map" src={Map} alt="" />
-      <div className="contact-badge"></div>
+      <div className="contact-badge">
+        <div className="information-container">
+          <span className="information-container-item">S.und@themail.com</span>
+          <span className="information-container-item">+30 210 1234 567</span>
+          <div className="social">
+            <FontAwesomeIcon icon={faInstagram} className="social-icon" />
+            <FontAwesomeIcon icon={faTwitter} className="social-icon" />
+            <FontAwesomeIcon icon={faFacebookF} className="social-icon" />
+            <FontAwesomeIcon icon={faGlobeAmericas} className="social-icon" />
+          </div>
+        </div>
+      </div>
       <div className="contact-formwrapper">
         <h2>Contact Us</h2>
         <p>
