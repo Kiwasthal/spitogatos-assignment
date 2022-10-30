@@ -79,13 +79,35 @@
         display: flex;
         flex-direction: row;
         gap: 40px;
+        margin-bottom: 40px;
 
-        .options-wrapper {
-          position: relative;
+        div {
           width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
+          position: relative;
+        }
+
+        //Overriding the default arrow cross browsers
+        select {
+          -moz-appearance: none; /* Firefox */
+          -webkit-appearance: none; /* Safari and Chrome */
+          appearance: none;
+        }
+
+        //Select Arrow styling based on select's state
+
+        select ~ .arrow {
+          position: absolute;
+          height: 30px;
+          right: 0;
+          transform: translate(-50%, -50%);
+          top: 50%;
+
+          transition: transform 200ms ease-in-out;
+        }
+
+        select:focus ~ .arrow {
+          transform: rotate(180deg) translate(50%, 50%);
+          color: $buttonColor;
         }
       }
 

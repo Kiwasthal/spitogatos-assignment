@@ -1,4 +1,5 @@
 import { Field } from 'formik';
+import SelectArrow from '../../assets/SelectArrow';
 import useFetch from '../../hooks/useFetch';
 
 //Control props provides the selected value of the category field
@@ -20,38 +21,39 @@ const FormCategories = ({ control }) => {
 
   return (
     <>
-      <Field as="select" name="category" className="form-input">
-        {data.map((option, index) => {
-          return (
+      <div className="form-options">
+        <Field as="select" name="category" className="form-input">
+          {data.map((option, index) => (
             <option key={index} value={option.name}>
               {option.name}
             </option>
-          );
-        })}
-      </Field>
-
-      <Field name="subcategory" as="select" className="form-input">
-        {/* // Gets the necessary subcategory data based on the selected value */}
-        {data.map(category => {
-          //If the selected value is all we want to return all the relevant subcategories
-          if (control === 'All')
-            return category.subCategories
-              ? category.subCategories.map(subcategory => (
+          ))}
+        </Field>
+        <SelectArrow />
+      </div>
+      <div>
+        <Field name="subcategory" as="select" className="form-input">
+          {/* // Gets the necessary subcategory data based on the selected value */}
+          {data.map(category => {
+            //If the selected value is all we want to return all the relevant subcategories
+            if (control === 'All')
+              return category.subCategories
+                ? category.subCategories.map(subcategory => (
+                    <option key={subcategory.name}>{subcategory.name}</option>
+                  ))
+                : null;
+            //If the selected value is not all, we only return the subcategory matching to the selected value
+            else if (control === category.name)
+              return (
+                category.subCategories &&
+                category.subCategories.map(subcategory => (
                   <option key={subcategory.name}>{subcategory.name}</option>
                 ))
-              : null;
-          //If the selected value is not all, we only return the subcategory matching to the selected value
-          else if (control === category.name) {
-            console.log(true);
-            return (
-              category.subCategories &&
-              category.subCategories.map(subcategory => (
-                <option key={subcategory.name}>{subcategory.name}</option>
-              ))
-            );
-          }
-        })}
-      </Field>
+              );
+          })}
+        </Field>
+        <SelectArrow />
+      </div>
     </>
   );
 };

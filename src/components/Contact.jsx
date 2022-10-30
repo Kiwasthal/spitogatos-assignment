@@ -64,7 +64,7 @@ const ContactSection = () => {
 
   return (
     <section className="contact">
-      {/* Map */}
+      {/* --- Map --- */}
       <img className="contact-map" src={Map} alt="" />
       <div className="contact-badge"></div>
       <div className="contact-formwrapper">
@@ -83,11 +83,13 @@ const ContactSection = () => {
           {props => (
             <Form>
               {/* --- Full Name--- */}
+
               <div className="form">
                 <FormFullName />
               </div>
 
               {/* --- Email --- */}
+
               <div className="form">
                 <FormEmail />
               </div>
@@ -106,14 +108,18 @@ const ContactSection = () => {
 
               {/* --- Message --- */}
               <div className="form">
-                <FormMessage />
+                <FormMessage control={props.values.message} />
               </div>
+
+              {/* --- Checkboxes --- */}
 
               <p className="checkboxtext">
                 Please select at least one of the following:
               </p>
 
               <FormCheckBoxGroup />
+
+              {/* --- Submit Button --- */}
 
               <div className="form-btnwrapper">
                 <button type="submit">Submit</button>
