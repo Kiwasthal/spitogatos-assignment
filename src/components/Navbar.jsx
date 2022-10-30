@@ -1,6 +1,20 @@
 import Logo from '../assets/Logo.svg';
 import BurgerMenu from '../assets/BurgerMenu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import useResizedDebounce from '../hooks/useDebouncedResize';
+
+//Debouncing listeners for efficiency
+
+function debounce(fn, ms) {
+  let timer;
+  return _ => {
+    clearTimeout(timer);
+    timer = setTimeout(_ => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
 
 /**
  * NavBar
@@ -8,6 +22,21 @@ import { useState } from 'react';
 
 const Nav = () => {
   const [burgerClass, setBurgerClass] = useState('closed');
+
+  //As a solution to using a state for the burger class we automatically get rid of all states concerning the menu when resizing, causing scss conflicts
+  //Might handle this issue differently later
+
+  useEffect(() => {
+    const debouncedHandleResize = debounce(() => {
+      setBurgerClass('closed');
+    }, 1000);
+
+    window.addEventListener('resize', debouncedHandleResize);
+
+    return _ => {
+      window.removeEventListener('resize', debouncedHandleResize);
+    };
+  });
 
   const handleBurgerClick = () =>
     burgerClass === 'open' ? setBurgerClass('closed') : setBurgerClass('open');

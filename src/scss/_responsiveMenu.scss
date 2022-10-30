@@ -7,7 +7,7 @@
     overflow: visible;
 
     h1 {
-      display: none !important;
+      display: none;
     }
 
     .burger {
@@ -16,7 +16,7 @@
     }
 
     &-logo {
-      opacity: 1 !important;
+      opacity: 1;
       position: absolute;
       left: 72px;
       top: 26px;
