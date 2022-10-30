@@ -35,7 +35,7 @@ const Hero = () => {
         </p>
       </div>
       {/* // --- Slider Buttons --- // */}
-      <div className="hero-slidenav">
+      <div className="hero-slidenav" role="slider">
         {slides.map((_, index) => (
           <div
             key={index}
@@ -46,7 +46,6 @@ const Hero = () => {
                 : 'hero-slidenav-item '
             } `}
             onClick={() => setCurrentIndex(index)}
-            role="slider"
           ></div>
         ))}
       </div>

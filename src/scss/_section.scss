@@ -1,6 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
   gap: 144px;
@@ -10,7 +11,8 @@
   &-item {
     height: 50%;
     width: 76%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 696px 456px;
     gap: 100px;
 
     /**
@@ -41,6 +43,7 @@
         background-image: url('../assets/Content_Image_Two.png');
         transition: all 0.2s ease-in-out;
         transition-delay: 0.1s;
+        justify-self: center;
       }
 
       &.two:hover {
@@ -60,9 +63,7 @@
 
       //Displacing only the second container to fit layout
       &.secondary {
-        //Calculation based on image default size (convert to grids?/?)
-        width: 696px;
-        margin-left: 239px;
+        justify-self: flex-end;
       }
 
       h4 {

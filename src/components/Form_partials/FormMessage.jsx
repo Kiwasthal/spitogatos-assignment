@@ -13,7 +13,7 @@ const FormMessage = ({ control }) => {
         name="message"
         type="text"
         className="form-textarea"
-        maxlength="100"
+        maxLength="100"
       />
       <span aria-hidden="true" className="form-label">
         Message *
