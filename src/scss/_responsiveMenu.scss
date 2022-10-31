@@ -6,14 +6,19 @@
     align-items: center;
     overflow: visible;
 
+    //Disabling smaller screen sized components ---------
+
     h1 {
       display: none;
     }
-
-    .burger {
+    .btn {
       display: none;
-      position: absolute;
     }
+    // .mobile-nav {
+    //   display: none;
+    // }
+
+    // ---------
 
     &-logo {
       opacity: 1;

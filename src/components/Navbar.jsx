@@ -1,7 +1,6 @@
 import Logo from '../assets/Logo.svg';
-import BurgerMenu from '../assets/BurgerMenu';
 import { useEffect, useState } from 'react';
-import useResizedDebounce from '../hooks/useDebouncedResize';
+import MenuNav from './MobileSection';
 
 //Debouncing listeners for efficiency
 
@@ -42,7 +41,7 @@ const Nav = () => {
     burgerClass === 'open' ? setBurgerClass('closed') : setBurgerClass('open');
 
   return (
-    <header>
+    <header className={`header ${burgerClass}`}>
       <nav className={`nav ${burgerClass}`} role="navigation" aria-label="Main">
         <img src={Logo} alt="S.und Co Lime Logo" className="nav-logo" />
         <ul className="nav-menu" aria-label="menubar">
@@ -65,12 +64,18 @@ const Nav = () => {
             Contact
           </li>
         </ul>
+        {/* Menu Header && burger menu are displayed in medium screen-sizes & below */}
         <h1>Menu</h1>
-        <BurgerMenu click={handleBurgerClick} />
+        <div className="btn" onClick={handleBurgerClick}>
+          <span className={`btn-burger`}></span>
+        </div>
         <h3 className="nav-localization">
           <span>EN</span> | <span>GR</span>
         </h3>
       </nav>
+
+      {/* {//Complementary component displayed in medium screens & below} */}
+      <MenuNav condition={burgerClass} />
     </header>
   );
 };
