@@ -1,12 +1,15 @@
 .main {
   padding-top: 32px;
   padding-bottom: 48px;
+  padding-left: 24px;
+  padding-right: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
   gap: 37px;
+  overflow-x: hidden;
 
   //Change 'flow' of grid on the second item on mobile views
 
@@ -18,7 +21,7 @@
 
   &-item {
     height: 50%;
-    width: 80%;
+    width: 100%;
     display: grid;
     grid-template-rows: 167 380px;
     gap: 32px;
@@ -28,11 +31,12 @@
     **/
 
     .image-container {
-      min-height: 180px;
+      height: 180px;
       width: 100%;
       justify-self: center;
       background-size: cover;
       background-position: center;
+      overflow: hidden;
 
       @include transition-ease;
 
@@ -45,8 +49,9 @@
       }
 
       &.two {
-        height: 424px;
-        width: 100%;
+        display: block;
+        height: 289px;
+        width: 312px;
         background-size: contain;
         background-repeat: no-repeat;
         background-image: url('../assets/Content_Image_Two.png');
@@ -126,6 +131,8 @@
     gap: 144px;
     padding-top: 15vh;
     padding-bottom: 20vh;
+    padding-left: 0px;
+    padding-right: 0px;
 
     //Reversing mobile view of pillow item to fit design on larger screens
 
