@@ -1,3 +1,8 @@
+/*
+ * Media Queries 
+ * Nav Styles
+*/
+
 @include media-lg {
   .nav {
     height: 64px;
@@ -6,7 +11,7 @@
     align-items: center;
     overflow: visible;
 
-    //Disabling smaller screen sized components ---------
+    // ------ Disabling smaller screen sized components ---------
 
     h1 {
       display: none;
@@ -14,9 +19,9 @@
     .btn {
       display: none;
     }
-    // .mobile-nav {
-    //   display: none;
-    // }
+    .mobile-nav {
+      display: none;
+    }
 
     // ---------
 

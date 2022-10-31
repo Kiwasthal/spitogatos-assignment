@@ -1,27 +1,36 @@
 .main {
+  padding-top: 32px;
+  padding-bottom: 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  gap: 144px;
-  padding-top: 15vh;
-  padding-bottom: 20vh;
+  width: 100vw;
+  gap: 37px;
+
+  //Change 'flow' of grid on the second item on mobile views
+
+  :nth-child(2) {
+    .image-container {
+      grid-row: 1;
+    }
+  }
 
   &-item {
     height: 50%;
-    width: 76%;
+    width: 80%;
     display: grid;
-    grid-template-columns: 696px 456px;
-    gap: 100px;
+    grid-template-rows: 167 380px;
+    gap: 32px;
 
     /**
     * Image
     **/
 
     .image-container {
-      min-height: 368px;
-      min-width: 696px;
+      min-height: 180px;
+      width: 100%;
+      justify-self: center;
       background-size: cover;
       background-position: center;
 
@@ -37,7 +46,7 @@
 
       &.two {
         height: 424px;
-        width: 455px;
+        width: 100%;
         background-size: contain;
         background-repeat: no-repeat;
         background-image: url('../assets/Content_Image_Two.png');
@@ -58,8 +67,7 @@
     .information-container {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      width: 455px;
+      width: 100%;
 
       //Displacing only the second container to fit layout
       &.secondary {
@@ -69,9 +77,9 @@
       h4 {
         color: $textIdle;
         height: 15px;
-        font-size: 19px;
+        font-size: 14px;
         letter-spacing: 0px;
-        margin-bottom: 9px;
+        margin-bottom: 6px;
       }
 
       h3 {
@@ -104,6 +112,68 @@
 
       button:hover {
         background: $buttonColorHovered;
+      }
+    }
+  }
+}
+
+/*
+ * Media Queries 
+*/
+
+@include media-lg {
+  .main {
+    gap: 144px;
+    padding-top: 15vh;
+    padding-bottom: 20vh;
+
+    //Reversing mobile view of pillow item to fit design on larger screens
+
+    :nth-child(2) {
+      .image-container {
+        grid-column: 2;
+        grid-row: 1;
+      }
+    }
+
+    &-item {
+      width: 76%;
+      display: grid;
+      grid-template-columns: 696px 456px;
+      gap: 100px;
+
+      .image-container {
+        min-height: 368px;
+        min-width: 696px;
+
+        &.two {
+          height: 424px;
+          width: 455px;
+        }
+      }
+
+      .information-container {
+        justify-content: center;
+        width: 455px;
+
+        h4 {
+          font-size: 19px;
+          margin-bottom: 9px;
+        }
+
+        h3 {
+          font-size: 32px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+
+        button {
+          margin-top: 40px;
+          height: 56px;
+          width: 240px;
+        }
       }
     }
   }

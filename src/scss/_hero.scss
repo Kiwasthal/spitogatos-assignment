@@ -1,5 +1,5 @@
 .hero {
-  height: 100vh;
+  height: 70vh;
   width: 100vw;
   background: linear-gradient(180deg, #fefefe00 40%, #000000 100%) 0% 0%
     no-repeat padding-box;
@@ -7,17 +7,14 @@
   background-position: center;
   background-size: cover;
   overflow: hidden;
-
-  /*
-  * --------- Hero Text Layout ---------
-  */
+  position: relative;
 
   .hero-image {
     background-size: cover;
-    background-position: left 50% top 0%;
+    background-position: left;
     mix-blend-mode: multiply;
     width: 100vw;
-    height: 130vh;
+    height: 100vh;
   }
 
   /*
@@ -25,35 +22,30 @@
   */
 
   &-modal {
-    top: 45%;
-    //Relative size -- Used later to configure section
-    left: 12%;
-    max-width: 32%;
     position: absolute;
-    color: $primaryColor;
-    text-align: left;
+    top: 30%;
+    left: 24px;
+    width: 85%;
 
     &-title {
-      font-size: 6rem;
-      letter-spacing: 0px;
-      color: #ffffff;
+      color: $primaryColor;
       position: relative;
-      min-height: 120px;
       font-weight: 800;
+      font-size: 40px;
     }
 
     &-title::before {
       content: '';
       position: absolute;
-      bottom: -10%;
-      height: 15px;
-      width: 96px;
+      bottom: -30%;
+      height: 10px;
+      width: 48px;
       background-color: $accentColor;
     }
 
     &-content {
-      margin-top: 4rem;
-      font-size: 2rem;
+      margin-top: 48px;
+      font-size: 18px;
       font-weight: 800;
     }
   }
@@ -71,8 +63,8 @@
     gap: 20px;
 
     &-item {
-      height: 16px;
-      width: 16px;
+      height: 12px;
+      width: 12px;
       background-color: $buttonIdle;
       border-radius: 100%;
       cursor: pointer;
@@ -81,6 +73,56 @@
 
       &.active {
         background-color: $primaryColor;
+      }
+    }
+  }
+}
+
+@include media-lg {
+  .hero {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+
+    .hero-image {
+      background-size: cover;
+      background-position: left 50% top 0%;
+      mix-blend-mode: multiply;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    &-modal {
+      top: 45%;
+      //Relative size -- Used later to configure section
+      left: 12%;
+      position: absolute;
+      color: $primaryColor;
+      text-align: left;
+      width: 32%;
+
+      &-title {
+        font-size: 6rem;
+        min-height: 120px;
+      }
+
+      &-title::before {
+        bottom: -10%;
+        height: 15px;
+        width: 96px;
+      }
+
+      &-content {
+        margin-top: 4rem;
+        font-size: 2rem;
+        font-weight: 800;
+      }
+    }
+
+    &-slidenav {
+      &-item {
+        height: 16px;
+        width: 16px;
       }
     }
   }
