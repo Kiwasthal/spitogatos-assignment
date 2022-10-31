@@ -1,6 +1,8 @@
 const CheckMark = ({ error, touched }) => {
   return (
     <>
+      {/* Checkmarks appearing in the Phone / Email / Fullname form-sections are only displayed
+    if there is no error after the onblur event has occured (handled by the touched attribute) */}
       {!error && touched ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"

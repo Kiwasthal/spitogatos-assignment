@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 .main {
   padding-top: 32px;
   padding-bottom: 48px;
@@ -81,6 +83,7 @@
 
       h4 {
         color: $textIdle;
+        font-weight: map.get($fontWeight, 'bold');
         height: 15px;
         font-size: 14px;
         letter-spacing: 0px;
@@ -89,12 +92,14 @@
 
       h3 {
         color: $secondaryColor;
+        font-weight: map.get($fontWeight, 'extraBold');
         font-size: 32px;
         margin-bottom: 32px;
       }
 
       p {
         line-height: 1.7rem;
+        font-weight: map.get($fontWeight, 'regular');
         font-size: 18px;
         text-align: left;
         color: $secondaryColor;
@@ -102,15 +107,15 @@
 
       button {
         margin-top: 40px;
-        height: 56px;
-        width: 240px;
+        height: 48px;
+        width: 152px;
         outline: none;
         border: none;
         border-radius: 42px;
         box-shadow: 0px 3px 6px #00000066;
         background: $buttonColor;
         font-size: 22px;
-        font-weight: 800;
+        font-weight: map.get($fontWeight, 'extraBold');
         color: $primaryColor;
         text-align: center;
       }

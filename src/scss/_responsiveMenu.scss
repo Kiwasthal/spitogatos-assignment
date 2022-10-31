@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 /*
  * Media Queries 
  * Nav Styles
@@ -46,7 +48,7 @@
       &-link {
         display: inline-block;
         font-size: 18px;
-        font-weight: 800;
+        font-weight: map.get($fontWeight, 'extraBold');
         letter-spacing: 0px;
         position: relative;
         cursor: pointer;
@@ -75,6 +77,7 @@
       top: 26px;
       color: $textSecondary;
       cursor: default;
+      font-weight: map.get($fontWeight, 'bold');
 
       span {
         cursor: pointer;

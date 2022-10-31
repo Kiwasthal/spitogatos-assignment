@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 .footer {
   background: $secondaryColor;
   height: 40px;
@@ -10,6 +12,7 @@
 
   &-copywrite {
     font-size: 12px;
+    font-weight: map.get($fontWeight, 'medium');
   }
 
   &-cookiesprivacy {
@@ -34,7 +37,7 @@
 
     &-cookiesprivacy {
       font-size: 22px;
-      font-weight: 800;
+      font-weight: map.get($fontWeight, 'extraBold');
       position: absolute;
       left: 50%;
       transform: translateX(-50%);

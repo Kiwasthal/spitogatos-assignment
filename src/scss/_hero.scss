@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 .hero {
   height: 70vh;
   width: 100vw;
@@ -30,7 +32,7 @@
     &-title {
       color: $primaryColor;
       position: relative;
-      font-weight: 800;
+      font-weight: map.get($fontWeight, 'extraBold');
       font-size: 40px;
     }
 
@@ -46,7 +48,7 @@
     &-content {
       margin-top: 48px;
       font-size: 18px;
-      font-weight: 800;
+      font-weight: map.get($fontWeight, 'extraBold');
     }
   }
 
@@ -115,7 +117,7 @@
       &-content {
         margin-top: 4rem;
         font-size: 2rem;
-        font-weight: 800;
+        font-weight: map.get($fontWeight, 'extraBold');
       }
     }
 

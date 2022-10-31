@@ -73,8 +73,7 @@ const Nav = () => {
           <span>EN</span> | <span>GR</span>
         </h3>
       </nav>
-
-      {/* {//Complementary component displayed in medium screens & below} */}
+      {/* Complementary component displayed in medium screens & below for the menu */}
       <MenuNav condition={burgerClass} />
     </header>
   );

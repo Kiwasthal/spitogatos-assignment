@@ -24,7 +24,7 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   /**
-   * Uncomment to enable slider auto-scroll
+   * Uncomment below useEffect code to enable slider auto-scroll
    */
 
   // useEffect(() => {

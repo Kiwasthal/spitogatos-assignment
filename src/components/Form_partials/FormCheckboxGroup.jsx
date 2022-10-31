@@ -1,6 +1,8 @@
 import { Field, ErrorMessage } from 'formik';
 
 const CheckBox = ({ labeltext }) => {
+  //Grouping the checkbox options with the name attribute (checkboxOption)
+
   return (
     <label className="container">
       {labeltext}

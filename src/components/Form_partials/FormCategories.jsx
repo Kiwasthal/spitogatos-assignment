@@ -45,7 +45,7 @@ const FormCategories = ({ control }) => {
         >
           {/* // Gets the necessary subcategory data based on the selected value */}
           {data.map(category => {
-            //If the selected value is all we want to return all the relevant subcategories
+            //If the selected value is all then we want to return all the relevant subcategories
             if (control === 'All')
               return category.subCategories
                 ? category.subCategories.map(subcategory => (

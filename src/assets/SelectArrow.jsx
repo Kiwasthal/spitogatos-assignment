@@ -1,3 +1,7 @@
+/**
+ * Custom select arrow matching the original design
+ */
+
 const SelectArrow = () => {
   return (
     <svg

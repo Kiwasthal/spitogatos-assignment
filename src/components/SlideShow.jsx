@@ -5,6 +5,7 @@ const SlideShow = ({ slides, currentIndex }) => {
   /**
    * Animations
    */
+
   const fadeVariants = {
     fadeOut: {
       opacity: 0,
@@ -14,6 +15,8 @@ const SlideShow = ({ slides, currentIndex }) => {
       backgroundImage: `url(${slides[currentIndex].url})`,
     },
   };
+
+  //Added a simple fade animation in the slider transition
 
   const controls = useAnimation();
   useEffect(() => {
