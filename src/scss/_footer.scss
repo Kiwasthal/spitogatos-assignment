@@ -1,22 +1,47 @@
 .footer {
   background: $secondaryColor;
-  height: 48px;
+  height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding-left: 72px;
-  padding-right: 72px;
+  padding-left: 24px;
+  padding-right: 24px;
 
   &-copywrite {
-    font-size: 19px;
+    font-size: 12px;
   }
 
   &-cookiesprivacy {
-    font-size: 22px;
-    font-weight: 800;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    display: none;
+  }
+
+  &-logo {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+@include media-lg {
+  .footer {
+    height: 48px;
+    padding-left: 72px;
+    padding-right: 72px;
+
+    &-copywrite {
+      font-size: 19px;
+    }
+
+    &-cookiesprivacy {
+      font-size: 22px;
+      font-weight: 800;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &-logo {
+      height: 32px;
+      width: 32px;
+    }
   }
 }
