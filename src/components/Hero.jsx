@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SlideShow from './SlideShow';
 
 /**
@@ -22,6 +22,17 @@ const Hero = () => {
    * Used to dictate the appearing slider
    */
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  /**
+   * Uncomment to enable slider auto-scroll
+   */
+
+  // useEffect(() => {
+  //   let sliderTimer = setTimeout(() => {
+  //     setCurrentIndex((currentIndex + 1) % slides.length);
+  //   }, 5000);
+  //   return () => clearTimeout(sliderTimer);
+  // }, [currentIndex]);
 
   return (
     <header className="hero">

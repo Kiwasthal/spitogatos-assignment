@@ -29,6 +29,7 @@ const SlideShow = ({ slides, currentIndex }) => {
       initial="fadeIn"
       animate={controls}
       role="listbox"
+      aria-label="Dark background images"
     ></motion.div>
   );
 };
