@@ -131,13 +131,24 @@
  * Media Queries 
 */
 
-@include media-xl {
+@include media-md {
+  .main {
+    &-item {
+      .image-container {
+        height: 300px;
+      }
+    }
+  }
+}
+
+@include media-lg {
   .main {
     gap: 144px;
     padding-top: 15vh;
     padding-bottom: 20vh;
     padding-left: 0px;
     padding-right: 0px;
+    align-items: center;
 
     //Reversing mobile view of pillow item to fit design on larger screens
 
@@ -149,18 +160,19 @@
     }
 
     &-item {
-      width: 76%;
+      width: 89%;
       display: grid;
-      grid-template-columns: 696px 456px;
-      gap: 100px;
+      grid-template-columns: 496px 256px;
+      gap: 60px;
 
       .image-container {
         min-height: 368px;
-        min-width: 696px;
+        min-width: 496px;
 
         &.two {
           height: 424px;
           width: 455px;
+          justify-self: start;
         }
       }
 
@@ -187,6 +199,24 @@
           width: 240px;
         }
       }
+    }
+  }
+}
+
+@include media-xl {
+  .main {
+    &-item {
+      width: 76%;
+      grid-template-columns: 596px 456px;
+      gap: 100px;
+    }
+  }
+}
+
+@include media-2xl {
+  .main {
+    &-item {
+      grid-template-columns: 696px 456px;
     }
   }
 }

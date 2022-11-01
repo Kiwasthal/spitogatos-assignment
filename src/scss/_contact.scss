@@ -6,13 +6,16 @@
   position: relative;
   flex-direction: column-reverse;
   overflow-x: hidden;
+  gap: 140px;
   /*
   * --------- Map & Map Pointer ---------
   */
   &-map {
     height: 300px;
     width: 100%;
-
+    //Scaling the image to find the correct map position!
+    transform: scale(1.9) translateX(-180px);
+    object-position: center;
     //Arbitrarily decreasing image brightness to fit original design
     //Note: cannot use blend mode with linear-background since instructions state the html tag for the map must be an image
     filter: brightness(80%);
@@ -228,6 +231,7 @@
       &-input:-webkit-autofill:hover,
       &-input:-webkit-autofill:focus,
       &-input:-webkit-autofill:active {
+        //Getting rid of automatic autocomplete styling
         -webkit-box-shadow: 0 0 0 30px $primaryColor inset !important;
         box-shadow: 0 0 0 30px $primaryColor inset !important    ;
       }
@@ -396,12 +400,14 @@
   .contact {
     flex-direction: row;
     position: relative;
+    gap: 0;
 
     &-map {
       width: 560px;
       height: 1032px;
       object-fit: cover;
       object-position: right;
+      transform: scale(1);
     }
 
     &-badge {
