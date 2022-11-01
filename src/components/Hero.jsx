@@ -1,5 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SlideShow from './SlideShow';
+import banner_one from '../assets/Hero_Banner_One.png';
+import banner_two from '../assets/Hero_Banner_Two.jpg';
+import banner_three from '../assets/Hero_Banner_Three.jpg';
+
+console.log(banner_one);
 
 /**
  * Slider Array
@@ -7,13 +12,13 @@ import SlideShow from './SlideShow';
 
 const slides = [
   {
-    url: '/src/assets/Hero_Banner_One.png',
+    url: banner_one,
   },
   {
-    url: '/src/assets/Hero_Banner_Two.jpg',
+    url: banner_two,
   },
   {
-    url: '/src/assets/Hero_Banner_Three.jpg',
+    url: banner_three,
   },
 ];
 

@@ -9,6 +9,9 @@ function App() {
   return (
     <>
       <Navbar />
+
+      {/* Page content wrapper is used to disable content in mobile menu views */}
+
       <div className="page-content">
         <Hero />
         <MainSection />
