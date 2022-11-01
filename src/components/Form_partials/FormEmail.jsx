@@ -8,14 +8,22 @@ const FormEmail = () => {
         <>
           <input
             aria-label="Your phone"
+            onClick={() => console.log(meta)}
             type="text"
             name="email"
-            className="form-input"
+            className={`form-input ${
+              meta.touched && meta.error ? 'invalid' : ''
+            }`}
             required={true}
             spellCheck="false"
             {...field}
           />
-          <span aria-hidden="true" className="form-label">
+          <span
+            aria-hidden="true"
+            className={`form-label ${
+              meta.touched && meta.error ? 'invalid' : ''
+            }`}
+          >
             Email *
           </span>
           {meta.error ? (

@@ -16,7 +16,7 @@ const FormMessage = ({ control }) => {
         spellCheck="false"
       />
       <span aria-hidden="true" className="form-label">
-        Message *
+        Message
       </span>
       {/* Getting the available characters (all chars - typed chars) */}
       <p className="form-error">{100 - control.length}</p>

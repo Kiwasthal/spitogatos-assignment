@@ -10,11 +10,18 @@ const FormPhone = () => {
             aria-label="Your phone"
             type="text"
             name="phone"
-            className="form-input"
+            className={`form-input ${
+              meta.touched && meta.error ? 'invalid' : ''
+            }`}
             required={true}
             {...field}
           />
-          <span aria-hidden="true" className="form-label">
+          <span
+            aria-hidden="true"
+            className={`form-label ${
+              meta.touched && meta.error ? 'invalid' : ''
+            }`}
+          >
             Phone *
           </span>
           <CheckMark error={meta.error} touched={meta.touched} />

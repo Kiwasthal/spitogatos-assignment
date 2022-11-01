@@ -23,7 +23,7 @@ const FormCheckBoxGroup = () => {
     <div className="form-checkbox">
       <CheckBox labeltext={'Option 1'} />
       <CheckBox labeltext={'Option 2'} />
-      <ErrorMessage name="checkboxOption" />
+      <ErrorMessage name="checkboxOption" className="error" />
     </div>
   );
 };
