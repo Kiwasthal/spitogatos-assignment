@@ -37,7 +37,7 @@
 Enable Slider auto timer by uncommenting the useEffect snippet <code>src/components/SlideShow.jsx</code>
 Enable FormSubmit modal by uncommenting < SubmitMsg /> at <code>src/components/Contact.jsx</code>
 
-Differences:
+Information:
 
 <li>Hero is set to max view-height in desktop versions and rescales properly on smaller screens</li>
 <li>Larger screen breakpoint is set at 1075px</li>
