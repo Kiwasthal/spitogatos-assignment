@@ -80,9 +80,35 @@
   }
 }
 
+//Changed to relative sizes for better responsiveness
+
 @include media-lg {
   .hero {
     height: 100vh;
+    &-modal {
+      top: 45%;
+      left: 12%;
+      width: 40%;
+      &-title {
+        width: 699px;
+        font-size: 6rem;
+      }
+      &-title::before {
+        bottom: -10%;
+        height: 15px;
+        width: 96px;
+      }
+      &-content {
+        margin-top: 4rem;
+        font-size: 1.7rem;
+        font-weight: map.get($fontWeight, 'extraBold');
+      }
+    }
+  }
+}
+
+@include media-2xl {
+  .hero {
     background-position: center;
     background-size: cover;
 
@@ -95,30 +121,8 @@
     }
 
     &-modal {
-      top: 45%;
-      //Relative size -- Used later to configure section
-      left: 12%;
-      position: absolute;
-      color: $primaryColor;
       text-align: left;
       width: 32%;
-
-      &-title {
-        font-size: 6rem;
-        min-height: 120px;
-      }
-
-      &-title::before {
-        bottom: -10%;
-        height: 15px;
-        width: 96px;
-      }
-
-      &-content {
-        margin-top: 4rem;
-        font-size: 2rem;
-        font-weight: map.get($fontWeight, 'extraBold');
-      }
     }
 
     &-slidenav {

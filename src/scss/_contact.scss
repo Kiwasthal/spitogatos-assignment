@@ -155,14 +155,15 @@
           -moz-appearance: none; /* Firefox */
           -webkit-appearance: none; /* Safari and Chrome */
           appearance: none;
+          background-color: $primaryColor;
         }
 
         //Select Arrow styling based on select's state
 
         select ~ .arrow {
           position: absolute;
-          height: 30px;
-          right: 0;
+          height: 16px;
+          right: 8px;
           transform: translate(-50%, -50%);
           top: 50%;
 
@@ -394,18 +395,19 @@
 @include media-lg {
   .contact {
     flex-direction: row;
+    position: relative;
 
     &-map {
-      width: 857px;
+      width: 560px;
       height: 1032px;
       object-fit: cover;
       object-position: right;
     }
 
     &-badge {
-      left: 412px;
-      top: 512px;
-      bottom: 0;
+      position: absolute;
+      left: 111px;
+      top: 500px;
       transform: scale(1);
 
       .information-container {
@@ -418,7 +420,7 @@
     &-badge:hover {
       width: 356px;
       height: 356px;
-      transform: translate(-50%, -50%);
+      transform: translate(-20%, -50%);
 
       .information-container {
         margin-top: 112px;
@@ -427,9 +429,12 @@
 
     &-formwrapper {
       justify-content: center;
-      padding-left: 240px;
-      padding-right: 240px;
-
+      //Change to relative sizes for responsiveness
+      padding-left: 9.6%;
+      padding-right: 9.6%;
+      //Original absolute values
+      // padding-left: 184px;
+      // padding-right: 184px;
       h2 {
         margin-bottom: 32px;
         margin-top: 0px;
@@ -446,16 +451,13 @@
           gap: 40px;
           margin-bottom: 40px;
 
-          div {
+          select ~ .arrow {
+            position: absolute;
+            height: 30px;
+            right: 0;
+            transform: translate(-50%, -50%);
+            top: 46%;
           }
-        }
-        select {
-        }
-
-        select ~ .arrow {
-        }
-
-        select:focus ~ .arrow {
         }
 
         &-input,
@@ -468,7 +470,7 @@
 
         &-label {
           padding-left: 40px;
-          padding-top: 15px;
+          padding-top: 19px;
           font-size: 18px;
         }
 
@@ -522,6 +524,41 @@
       opacity: 0.8;
       font-size: 16px;
       font-weight: map.get($fontWeight, 'regular');
+    }
+  }
+}
+
+//
+
+@include media-xl {
+  .contact {
+    &-map {
+      width: 710px;
+    }
+
+    &-badge {
+      left: 261px;
+    }
+
+    &-badge:hover {
+      transform: translate(-35%, -50%);
+    }
+  }
+}
+
+//Max image width
+
+@include media-2xl {
+  .contact {
+    &-map {
+      width: 856px;
+    }
+    &-badge {
+      left: 411px;
+    }
+
+    &-badge:hover {
+      transform: translate(-50%, -50%);
     }
   }
 }

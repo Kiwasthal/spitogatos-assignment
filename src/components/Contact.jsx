@@ -72,6 +72,7 @@ const ContactSection = () => {
   return (
     <section className="contact">
       {/* --- Map --- */}
+
       <img className="contact-map" src={Map} alt="" />
       <div className="contact-badge">
         <div className="information-container">
@@ -85,6 +86,7 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
+
       <div className="contact-formwrapper">
         <h2>Contact Us</h2>
         <p>

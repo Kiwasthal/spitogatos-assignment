@@ -34,6 +34,10 @@ const FormCategories = ({ control }) => {
             </option>
           ))}
         </Field>
+        <span aria-hidden="true" className="form-label">
+          Category
+        </span>
+
         <SelectArrow />
       </div>
       <div>
@@ -62,6 +66,9 @@ const FormCategories = ({ control }) => {
               );
           })}
         </Field>
+        <span aria-hidden="true" className="form-label">
+          Subcategory
+        </span>
         <SelectArrow />
       </div>
     </>
