@@ -8,7 +8,6 @@ const FormEmail = () => {
         <>
           <input
             aria-label="Your phone"
-            onClick={() => console.log(meta)}
             type="text"
             name="email"
             className={`form-input ${

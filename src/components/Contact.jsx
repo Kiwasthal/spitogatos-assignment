@@ -14,6 +14,7 @@ import FormEmail from './Form_partials/FormEmail';
 import FormPhone from './Form_partials/FormPhone';
 import FormCategories from './Form_partials/FormCategories';
 import FormCheckBoxGroup from './Form_partials/FormCheckboxGroup';
+import SubmitMsg from './Form_partials/SubmitMsg';
 
 /*
 --- Initialize form values ---
@@ -35,12 +36,14 @@ const initialValues = {
 
 const validationSchema = YUP.object({
   fullname: YUP.string().required('Full Name is required'),
+
   email: YUP.string()
     .email()
     .required('Email is required')
     .matches(/\@spitogatos.gr$/, '🐱 Spitogatos Only 🐱'), //Allow only \@spitogatos.gr/ suffix
 
   //Removing whitespace before and after input -> make regex check before validation
+
   phone: YUP.string()
     .trim()
     .required('Phone is required')
@@ -49,11 +52,13 @@ const validationSchema = YUP.object({
       'Input must follow a pattern of 111-222-3333 or 111 222 3333 or 111.222.3333'
     ),
 
+  //Message validation not specified, uncomment for default validation
+
   //Message should not exceed 100 characters
-  message: YUP.string()
-    .min(1, 'At least one character')
-    .max(100, 'Cannot exceed 100 characters')
-    .required('Message is required'),
+  // message: YUP.string()
+  //   .min(1, 'At least one character')
+  //   .max(100, 'Cannot exceed 100 characters')
+  //   .required('Message is required'),
 
   //At least one option should be selected
   checkboxOption: YUP.array()
@@ -62,12 +67,19 @@ const validationSchema = YUP.object({
 
   //No clear direction as to configuring select menu, just assuming category should not be empty
   //Decision made based on response's Music object which provides no subcategories as of now
+  //Disable below to enable category validation
 
-  category: YUP.string().required('Please select your category of choice'),
+  // category: YUP.string().required('Please select your category of choice'),
+  // subcategory: YUP.string().required('Please select your subcategory of choice'),
 });
 
 const ContactSection = () => {
-  const onSubmit = values => console.log('Form data', values);
+  const onSubmit = (values, { resetForm }) => {
+    //Submitted values logged in console
+    console.log('Form data', values);
+    //Resetting fields
+    resetForm();
+  };
 
   return (
     <section className="contact">
@@ -102,6 +114,14 @@ const ContactSection = () => {
         >
           {props => (
             <Form aria-label="Contact information">
+              {/* Optional Component Displaying submitted values for visual cues (uncomment to enable) */}
+              {/* <SubmitMsg
+                formData={props.values}
+                valid={props.isValid}
+                submitting={props.isSubmitting}
+                reset={props.resetForm}
+              /> */}
+
               {/* --- Full Name--- */}
 
               <div className="form">

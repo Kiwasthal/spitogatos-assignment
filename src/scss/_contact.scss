@@ -127,6 +127,34 @@
     }
 
     /*
+    * --------- Complementary Submit Message ---------
+    * --------- Disabled by Default ---------
+    */
+
+    .form-success {
+      position: absolute;
+      z-index: 100;
+      top: 10%;
+      right: 10%;
+      border: 2px solid $secondaryColor;
+      background-color: $formColor;
+      color: $secondaryColor;
+      display: flex;
+      flex-direction: column;
+      border-radius: 15px;
+      padding: 20px;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      h4 {
+        font-size: 24px;
+      }
+    }
+    /* --------------------------------------------------- */
+
+    /*
     * --------- Form Fields ---------
     */
 
@@ -136,6 +164,8 @@
       flex-direction: column;
       align-items: flex-end;
       position: relative;
+
+      //Success Message
 
       /*
       * --------- Select Input Styling ---------
