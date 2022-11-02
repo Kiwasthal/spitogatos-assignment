@@ -34,7 +34,7 @@
 <hr>
 <h5>Extras</h6>
 
-Enable Slider auto timer by uncommenting the useEffect snippet <code>src/components/SlideShow.jsx</code>
+Enable Slider auto timer by uncommenting the useEffect snippet <code>src/components/Hero.jsx</code>
 Enable FormSubmit modal by uncommenting < SubmitMsg /> at <code>src/components/Contact.jsx</code>
 
 Information:
